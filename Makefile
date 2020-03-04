@@ -16,6 +16,7 @@ SRC_PATH = srcs
 SRC_NAME += ft_strlen.s
 SRC_NAME += ft_strcpy.s
 SRC_NAME += ft_strcmp.s
+SRC_NAME += ft_write.s
 
 vpath %.s $(SRC_PATH)
 

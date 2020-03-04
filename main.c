@@ -3,7 +3,8 @@
 
 size_t  ft_strlen(const char *s);
 char    *ft_strcpy(char *dst, const char *src);
-int ft_strcmp(const char *s1, const char *s2);
+int     ft_strcmp(const char *s1, const char *s2);
+ssize_t ft_write(int fildes, const void *buf, size_t nbyte);
 
 void test_strlen(void)
 {
@@ -40,10 +41,16 @@ void test_strcmp(void)
     printf("test a/z %d %d\n", ft_strcmp("z", "a"), 'z' - 'a');
 }
 
+void test_write(void)
+{
+    printf("%zu %zd\n", ft_strlen("test 1"), ft_write(1, "test_1", ft_strlen("test 1")));
+}
+
 int main(void)
 {
     test_strlen();
     test_strcpy();
     test_strcmp();
+    test_write();
     return 0;
 }
