@@ -31,13 +31,13 @@ void test_strcpy(void)
 
 void test_strcmp(void)
 {
-    printf("test abc/abb %d %d\n", ft_strcmp("abc", "abb"), strcmp("abc", "abb"));
-    printf("test abc/abd %d %d\n", ft_strcmp("abc", "abd"), strcmp("abc", "abd"));
-    printf("test cdb/adb %d %d\n", ft_strcmp("cdb", "adb"), strcmp("cdb", "adb"));
-    printf("test aaa/aaa %d %d\n", ft_strcmp("aaa", "aaa"), strcmp("aaa", "aaa"));
-    printf("test aaa/aa %d %d\n", ft_strcmp("aaa", "aa"), strcmp("aaa", "aa"));
-    printf("test /abc %d %D\n", ft_strcmp("abc", ""), strcmp("abc", ""));
-    printf("test a/z %d %D\n", ft_strcmp("a", "z"), strcmp("a", "z"));
+    printf("test abc/abb %d %d\n", ft_strcmp("abc", "abb"), 'c' - 'b');
+    printf("test abc/abd %d %d\n", ft_strcmp("abc", "abd"), 'c' - 'd');
+    printf("test cdb/adb %d %d\n", ft_strcmp("cdb", "adb"), 'c' - 'a');
+    printf("test aaa/aaa %d %d\n", ft_strcmp("aaa", "aaa"), 0);
+    printf("test aaa/aa %d %d\n", ft_strcmp("aaa", "aa"), 'a' - '\0');
+    printf("test /abc %d %d\n", ft_strcmp("abc", ""), 'a' - '\0');
+    printf("test a/z %d %d\n", ft_strcmp("z", "a"), 'z' - 'a');
 }
 
 int main(void)

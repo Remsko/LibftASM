@@ -11,12 +11,12 @@ section .text
 ; rsi = src
 
 _ft_strcpy:
-            mov     rdx, rdi
+            push    rdi
             mov     rdi, rsi
             call    _ft_strlen
             mov     rcx, rax
             inc     rcx
-            mov     rdi, rdx
+            pop     rdi
             mov     rax, rdi
             rep     movsb
             ret

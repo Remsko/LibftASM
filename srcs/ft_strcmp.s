@@ -10,11 +10,6 @@ section .text
 ; rax = s1 - s2
 
 _ft_strcmp:
-            cmp     rdi, 0
-            je      match
-            cmp     rsi, 0
-            je      match
-
 length:
             mov     rdx, rdi
             xor     rcx, rcx
@@ -24,15 +19,10 @@ length:
     repne   scasb
             not     rcx
             mov     rdi, rdx
-
 compare:
             cld
     repe    cmpsb
             mov     al, byte [rdi - 1]
             mov     bl, byte [rsi - 1]
             sub     rax, rbx
-            ret
-
-match:
-            xor     rax, rax
             ret
