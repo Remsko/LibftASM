@@ -2,8 +2,11 @@ global _ft_strlen
 
 section .text
 
+; size_t  ft_strlen(const char *s);
+; rdi = s
+
 _ft_strlen:
-        sub     rcx, rcx    ; rcx = 0
+        xor     rcx, rcx    ; rcx = 0
         not     rcx         ; rcx = -1
         sub     al, al      ; al = 0
         cld                 ; clear df flag

@@ -14,6 +14,8 @@ CPPFLAGS = $(addprefix -I,$(INC_PATH))
 SRC_PATH = srcs
 
 SRC_NAME += ft_strlen.s
+SRC_NAME += ft_strcpy.s
+SRC_NAME += ft_strcmp.s
 
 vpath %.s $(SRC_PATH)
 
@@ -42,10 +44,15 @@ $(OBJ_PATH):
 
 clean:
 	$(RM) $(OBJ_PATH)
+	$(RM) a.out
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+test: $(NAME)
+	gcc libasm.a main.c
+	./a.out
 
 .PHONY: all clean fclean re test
